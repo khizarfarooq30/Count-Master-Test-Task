@@ -5,19 +5,22 @@ public class PlayerTarget : MonoBehaviour
 {
     [SerializeField] private ParticleSystem bloodEffect;
 
-    private PlayerCrowd playerCrowd;
-    
     public bool hasDetected;
-
+    
+    private PlayerCrowd playerCrowd;
+    private bool isLevelEndReached;
+    
     private void Start()
     {
         playerCrowd = GetComponentInParent<PlayerCrowd>();
         GameManager.Instance.OnGameFail += DisableTarget;
+        GameManager.Instance.OnReachLevelEnd += OnReachLevelEnd;
     }
 
     private void OnDisable()
     {
-        GameManager.Instance.OnGameFail -= DisableTarget;
+        GameManager.Instance.OnGameFail -= DisableTarget;    
+        GameManager.Instance.OnReachLevelEnd -= OnReachLevelEnd;
     }
 
     private void DisableTarget()
@@ -25,6 +28,13 @@ public class PlayerTarget : MonoBehaviour
         gameObject.SetActive(false);
     }
 
+    
+    private void OnReachLevelEnd()
+    {
+        isLevelEndReached = true;
+    }
+
+    
     public void Kill()
     {
         bloodEffect.transform.parent = null;
@@ -40,6 +50,14 @@ public class PlayerTarget : MonoBehaviour
     {
         if (other.TryGetComponent(out Obstacle obstacle))
         {
+            if (isLevelEndReached)
+            {
+                if (playerCrowd.IsLastPlayerLeftInCrowd())
+                {
+                    GameManager.GameWin();
+                    return;
+                }
+            }
             Kill();
         }
         
