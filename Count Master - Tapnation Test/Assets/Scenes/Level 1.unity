@@ -9076,6 +9076,18 @@ MonoBehaviour:
     borderColor: {r: 0.21857324, g: 0.16862746, b: 0.29411766, a: 1}
     fogColor: {r: 0.65363795, g: 0.5803922, b: 1, a: 1}
     cubeColor: {r: 0.14220582, g: 0.031372543, b: 0.3019608, a: 1}
+  - groundColor: {r: 1, g: 0.8487699, b: 0.75849056, a: 1}
+    borderColor: {r: 0.29411766, g: 0.23024334, b: 0.16862746, a: 1}
+    fogColor: {r: 1, g: 0.6877844, b: 0.5803922, a: 1}
+    cubeColor: {r: 0.3019608, g: 0.06846826, b: 0.031372543, a: 1}
+  - groundColor: {r: 0.9383415, g: 0.75686276, b: 1, a: 1}
+    borderColor: {r: 0.31256497, g: 0.08291204, b: 0.3207547, a: 1}
+    fogColor: {r: 0.8971083, g: 0.5803922, b: 1, a: 1}
+    cubeColor: {r: 0.26852274, g: 0.1194909, b: 0.46226418, a: 1}
+  - groundColor: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
+    borderColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+    fogColor: {r: 0.34901962, g: 0.56078434, b: 0.74509805, a: 1}
+    cubeColor: {r: 0.2509804, g: 0.18431373, b: 0.4666667, a: 1}
 --- !u!4 &1998969863 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2911936413452441854, guid: 3e111e21728fc7a46beeaae2df9aed00, type: 3}

@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
 
     public void IncrementLevel()
     {
+        levelNumber = PlayerPrefs.GetInt("Level");
         levelNumber++;
         PlayerPrefs.SetInt("Level", levelNumber);
     }
